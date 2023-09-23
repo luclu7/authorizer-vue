@@ -1,5 +1,5 @@
 {
-	"name": "@authorizerdev/authorizer-vue",
+	"name": "@luclu7/authorizer-vue-but-with-nickname",
 	"version": "1.0.0",
 	"description": "authorizer vue sdk",
 	"files": [
@@ -21,9 +21,9 @@
 	"author": "Lakhan Samani",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/authorizerdev/authorizer-vue/issues"
+		"url": "https://github.com/luclu7/authorizer-vue/issues"
 	},
-	"homepage": "https://github.com/authorizerdev/authorizer-vue#readme",
+	"homepage": "https://github.com/luclu7/authorizer-vue#readme",
 	"devDependencies": {
 		"@babel/types": "^7.21.4",
 		"@tsconfig/node18": "^2.0.0",
