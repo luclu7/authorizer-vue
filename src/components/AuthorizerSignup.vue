@@ -20,6 +20,21 @@
 				<div v-if="emailError" class="form-input-error">{{ emailError }}</div>
 			</div>
 
+			<!-- Nickname -->
+			<div class="styled-form-group" :hasError="nicknameError">
+				<label class="form-input-label" for="authorizer-sign-up-email"
+					><span>* </span>Nickname</label
+				>
+				<input
+					id="authorizer-sign-up-email"
+					v-model="nickname"
+					:class="`form-input-field ${nicknameError ? 'input-error-content' : null}`"
+					placeholder="eg. AzureDiamond"
+					type="text"
+				/>
+				<div v-if="nicknameError" class="form-input-error">{{ nicknameError }}</div>
+			</div>
+
 			<!-- password -->
 			<div class="styled-form-group" :hasError="passwordError">
 				<label class="form-input-label" for="authorizer-sign-up-password"
@@ -142,10 +157,13 @@ export default {
 		});
 		const formData: {
 			email: null | string;
+			nickname: null | string;
+			nickname: null | string;
 			password: null | string;
 			confirmPassword: null | string;
 		} = reactive({
 			email: null,
+			nickname: null,
 			password: null,
 			confirmPassword: null
 		});
@@ -155,6 +173,12 @@ export default {
 			}
 			if (formData.email && !isValidEmail(formData.email)) {
 				return 'Please enter valid email';
+			}
+			return null;
+		});
+		const nicknameError = computed((): string | null => {
+			if (formData.nickname === '') {
+				return 'Nickname is required';
 			}
 			return null;
 		});
@@ -253,6 +277,7 @@ export default {
 			Views,
 			emailError,
 			passwordError,
+			nicknameError,
 			confirmPasswordError,
 			setDisableButton
 		};
